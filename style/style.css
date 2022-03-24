@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*importation police de caractère*/
+@font-face {
+    font-family: "DINN black";
+    src: url("../fonts/DINNextLTPro-Light.woff2");
+}
+
+/* Application de la police de caractère à tout les éléments texte du body*/
+body {
+    font-family: "DINN black";
+}
+
+
+
+
+/*paramètres du header*/
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 10%;
+    z-index: 99;
+}
+
+header>div:nth-of-type(1) {
+    width: 95%;
+    padding: 2vh;
+    height: 10%;   
+}
+
+header>div:nth-of-type(1)>img {
+    height: 4vh;
+    width: 40vh;
+}
+
+header>div {
+    width: 5%;
+    height: 100vh;
+}
+
+header>div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header>div:nth-of-type(2)>nav:nth-of-type(1)>a>img {
+    height: 5vh;
+    width: 5vh;
+    margin: 2vh;
+}
+
+header>div:nth-of-type(2)>nav:nth-of-type(2)>a>img {
+    height: 5vh;
+    width: 5vh;
+    margin: 2vh;
+}
+
+/*mise en page section*/
+section {
+    height: 100vh;
+    font-size: 5vh;
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    scroll-snap-align: start;
+}
+
+html {
+    scroll-snap-type: y proximity;
+}
+
+/*insertion image de fond des sections*/
+#onlycinema {
+    background-image: url('../medias/images/Dune03.webp');
+    display: flex;
+    flex-direction: column;
+}
+
+#about {
+    background-image: url('../medias/images/Dune06.webp');
+}
+
+#characters {
+    background-image: url('../medias/images/dune-cast-scaled.jpeg');
+}
+
+#videoimage {
+    background-image: url('../medias/images/dune-production_01.jpg');
+}
+
+#findtheater {
+    background-image: url('../medias/images/Dune04.webp');
+}
+
+/*Positionnement de chaque titre*/
+
+#onlycinema>h1 {
+    width: 50vw;
+    text-align: center;
+    margin: 25vh 5vw;
+}
+
+#about>h1 {
+    position: relative;
+    top: 45vh;
+    padding-left: 1vw;
+}
+
+#characters>h1 {
+    position: relative;
+    top: 45vh;
+    padding-left: 1vw;
+}
+
+#videoimage>h1 {
+    position: relative;
+    text-align: center;
+    top: 10vh;
+}
+
+#findtheater>h1 {
+    position: relative;
+    top: 35vh;
+    padding-left: 1vw;
+}
+
+
+/* Mise en place section About the film */
+#textabout {
+    height: 30vh;
+    margin-top: 50vh;
+    background-color: rgba(214, 214, 214, 0.739);
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 1;
+}
+
+#textabout>p {
+    font-size: 0.5em;
+    padding: 1em;
+}
+
+/*positionnement des éléments p dans le grid*/
+#textabout>p:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: justify;
+    border-right: rgba(255, 255, 255, 0.712) solid;
+}
+
+#textabout>p:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: justify;
+    border-right: rgba(255, 255, 255, 0.712) solid;
+}
+
+#textabout>p:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: justify;
+}
+
+
+/*Positionnement vidéo + positionnement curseur*/
+#video {
+    width: 50vw;
+    height: calc(50vw * 390 / 640);
+    display: block;
+    position: absolute;
+    left: 5vw;
+    top: 35vh;
+    z-index: 98;
+}
+
+.scroll {
+    position: fixed !important;
+    width: 30vw !important;
+    height: calc(30vw * 2.5 / 4) !important;
+    top: 8vh !important;
+    left: 62vw !important;
+}
+
+
+
+
+
+/*Caroussel css characters*/
+div#sliderC figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    left: 0;
+    top: 5vh;
+    animation: 20s slidy infinite;
+
+}
+
+div#sliderC figure img {
+    width: 20%;
+    height: auto;
+    float: left;
+    border-radius: 1%;
+}
+
+div#sliderC {
+    width: 50%;
+    max-width: 30vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-left: 60vw;
+
+}
+
+@keyframes slidy {
+    0% {
+        left: 0%;
+    }
+
+    20% {
+        left: 0%;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+/*Caroussel css vidéo et images*/
+div#sliderV figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    left: 0;
+    top: 20vh;
+    animation: 20s slidy infinite;
+
+
+}
+
+div#sliderV figure img {
+    width: 20%;
+    height: auto;
+    float: left;
+    border-radius: 1%;
+}
+
+div#sliderV {
+    width: 100%;
+    max-width: 70vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+/*grid sur la div theater*/
+#theater{
+    height: 40vh;
+    margin-top: 40vh;
+    background-color: rgba(214, 214, 214, 0.739);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1;
+    
+}
+/*positionnement du texte dernière page*/
+#theater>button{
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 7vw;
+    margin-top: 7vw;
+    width: 10vw;
+    height: 10vh;
+}
+/*positionnement et dimension div map*/
+#map{
+    height: 40vh;
+    grid-column: 2;
+    grid-row: 1;
+    
+    
+}
+
+
